@@ -110,7 +110,7 @@ var userInput :[Int] = []
         print("\(strike)스트라이크, \(ball)볼 입니다.")
             
     }
-
+    print("정답입니다!")
     
     
     //길이 확인하기
