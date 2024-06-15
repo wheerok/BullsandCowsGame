@@ -7,9 +7,15 @@
 
 
 
-var randomNumArrBase: [Int] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+var randomNumArrBase: [Int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 randomNumArrBase.shuffle()
 var randomNum = [randomNumArrBase[0], randomNumArrBase[1], randomNumArrBase[2]]
+
+if randomNum[0] == 0 {
+    var moreRandomNum = Int.random(in: 1...9)
+    randomNum[0] = moreRandomNum
+}
+
 print(randomNum)
 // 랜덤한 세 가지 배열 완성
 
@@ -25,6 +31,7 @@ var userInput :[Int] = []
         print("입력한 값이 잘못되었습니다 세자리 숫자로 해주세요.")
         continue
     }
+    
 
     var thisAllDigit = true
     // 초기값 설정. 왜냐하면 일단 모든 값이 숫자라고 가정하기 위해서
@@ -44,14 +51,14 @@ var userInput :[Int] = []
     }
     // 그리고 넘어와서 !thisAllDigit 즉 true가 아닌 false임 위에서 input의 입력값을 하나하나 검사했으니 만약 false라는 것을 얻고 for문을 빠져나오면
 
-
+    
 
     for x in input {
         if let num = Int(String(x)) {
             userInput.append(num)
             
-            if userInput.contains(0){
-                print("입력한 값에 0이 포함되어 있습니다. 다시 입력하세요.")
+            if userInput[0] == 0 {
+                print("첫 번째자리 수에 0이 들어올 수 없습니다. 다시 입력하세요.")
                 break
             }
         }
@@ -78,14 +85,6 @@ var userInput :[Int] = []
             
     }
     print("\(strike)스트라이크, \(ball)볼 입니다.")
-   
-    
-    
-    //길이 확인하기
-    
-    
-    
 
 }
 
-print("정답입니다!")
